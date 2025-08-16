@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Lab 3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Drag the correct letters to the box</h2>
+    
+    <div id="box1" ondrop="drop(event)" ondragover="dragOver(event)" ondragleave="dragLeave(event)">
+        Letter A
+    </div>
+    
+    <div class="items">
+        <div class="item" draggable="true" ondragstart="dragStart(event)" id="item1">A</div>
+        <div class="item" draggable="true" ondragstart="dragStart(event)" id="item2">C</div>
+        <div class="item" draggable="true" ondragstart="dragStart(event)" id="item3">a</div>
+    </div>
+    
+    <div id="score">Score: 0</div>
+    
+
+    <!-- Task 2 -->
+     <h2>Move your mouse over the face parts</h2>
+
+     <svg id="face1" width="300" height="400">
+         <ellipse class="head1" cx="150" cy="200" rx="100" ry="120" 
+                  onmouseover="changeColor(this, '#yellow')" 
+                  onmouseout="changeColor(this, '#ffdbac')"
+                  onmousemove="showTooltip(event, 'Head')">
+         </ellipse>
+         
+         <circle class="eye" cx="120" cy="170" r="15" 
+                 onmouseover="changeColor(this, 'lightblue')" 
+                 onmouseout="changeColor(this, 'white')"
+                 onmousemove="showTooltip(event, 'Left Eye')">
+         </circle>
+         <circle cx="120" cy="170" r="8" fill="black"></circle>
+         
+         <circle class="eye" cx="180" cy="170" r="15" 
+                 onmouseover="changeColor(this, 'lightblue')" 
+                 onmouseout="changeColor(this, 'white')"
+                 onmousemove="showTooltip(event, 'Right Eye')">
+         </circle>
+         <circle cx="180" cy="170" r="8" fill="black"></circle>
+         
+         <ellipse class="nose1" cx="150" cy="200" rx="8" ry="15" 
+                  onmouseover="changeColor(this, 'orange')" 
+                  onmouseout="changeColor(this, 'pink')"
+                  onmousemove="showTooltip(event, 'Nose')">
+         </ellipse>
+
+         <ellipse class="mouth1" cx="150" cy="230" rx="25" ry="12" 
+                  onmouseover="changeColor(this, 'lightcoral')" 
+                  onmouseout="changeColor(this, 'red')"
+                  onmousemove="showTooltip(event, 'Mouth')">
+         </ellipse>
+     </svg>
+    <div id="tooltip1"></div>
+    
+    <!-- Task 4 -->
+     <h2>Drawing Canvas</h2>
+      <div class="info">
+        <p>Left click to draw, right click to erase</p>
+      </div>
+
+    <canvas id="canvas1" width="600" height="400"></canvas>
+
+    <!-- Task 5 -->
+     <h2>Find My Location</h2>
+    <div class="info">Click the button to get your location and open it in Google Maps</div>
+    <button id="btn1" onclick="getMyLocation()">Get My Location</button>
+
+    <div id="status1">Your location will be here</div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
